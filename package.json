@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node ."
+    "dev": "node .",
+    "client": "python3 display/main.py"
   },
   "keywords": [],
   "author": "",

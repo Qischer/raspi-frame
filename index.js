@@ -16,19 +16,10 @@ const client_secret = process.env.SPOTIFY_CLIENT_SECRET;
 var token = null;
 
 app.get('/api', async (req, res) => {
-
-  const url = "https://accounts.spotify.com/api/token";
-  const response = await fetch(url, {
-    method: 'POST',
-    headers: {'Content-Type': "application/x-www-form-urlencoded"},
-    body: `grant_type=client_credentials&client_id=${client_id}&client_secret=${client_secret}`
-  });
-
-  const data = await response.json();
-
-  res.json(data);
+  res.json({data: "hello"});
 });
 
+//SPOTIFY AUTHENTICATE
 app.get('/auth/login', (req, res) => {
 
   const scope = "streaming \
@@ -68,10 +59,6 @@ app.get('/auth/callback', async (req, res) => {
 app.get('/auth/token', (req, res) => {
   res.json({ access_token: token});
 })
-
-// app.get('/state', async (req, res) => {
-//   res.json({ response: token});
-// })
 
 app.get('/player/state', async (req, res) => {
   const url = "https://api.spotify.com/v1/me/player";
