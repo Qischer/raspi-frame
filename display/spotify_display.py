@@ -3,9 +3,9 @@ import requests
 from PIL import Image, ImageDraw, ImageFont
 from io import BytesIO
 
+url = 'http://localhost:3000'
 
 def init_player(height , width):
-  url = 'http://localhost:3000'
 
   #init panel
   panel = Image.new('RGB', (int(width), int(height)), (255, 255, 255))
@@ -43,7 +43,6 @@ def init_player(height , width):
     draw.text((50, 370), "An error occurred:" + str(e) , fill=(0, 0, 0, 128))
   
   return panel
-  
 
 def draw_player(canvas: Image):
 

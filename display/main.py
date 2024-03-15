@@ -17,3 +17,4 @@ if __name__ == '__main__':
   sd.draw_player(img)
 
   img.show()
+
