@@ -12,8 +12,8 @@ def init_player(height , width):
   draw = ImageDraw.Draw(panel)
 
   #font
-  fnt1 = ImageFont.truetype("/public/fonts/Futura.ttc", 15)
-  fnt2 = ImageFont.truetype("/public/fonts/Andale Mono.ttf", 11)
+  # fnt1 = ImageFont.load("/public/fonts/Futura.ttc")
+  # fnt2 = ImageFont.load("/public/fonts/Andale Mono.ttf")
 
   #boxes
   img_box = (50,50,350,350)
@@ -35,8 +35,8 @@ def init_player(height , width):
     #draw panel
     panel.paste(img, img_box)
 
-    draw.multiline_text((50,355), track_name  , font=fnt1,  fill=(0, 0, 0, 128))
-    draw.multiline_text((50,374), artists_name , font=fnt2,  fill=(0, 0, 0, 128))
+    draw.multiline_text((50,355), track_name  ,  fill=(0, 0, 0, 128))
+    draw.multiline_text((50,374), artists_name ,  fill=(0, 0, 0, 128))
 
   except Exception as e:
     print("An error occurred:", e)
